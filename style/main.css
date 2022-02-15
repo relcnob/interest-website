@@ -157,6 +157,23 @@ ol li:last-child::after {
   align-items: center;
   border: solid 1px #fff;
   transition: 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.shortcutCard:after {
+  content: "";
+  position: absolute;
+  display: block;
+  aspect-ratio: 1/1;
+  height: 16px;
+  bottom: 0.7rem;
+  right: 0.4rem;
+  background-image: url(/img/icons/right-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform-origin: center;
+  transition: all 0.3s ease;
 }
 
 .shortcutCard a {
@@ -175,7 +192,6 @@ ol li:last-child::after {
   text-align: center;
   text-transform: uppercase;
   background-color: var(--mainColor);
-  margin-bottom: 2rem;
   transition: 0.3s ease;
 }
 
@@ -191,6 +207,22 @@ ol li:last-child::after {
 
 .shortcutCard:hover h2 {
   letter-spacing: 2px;
+}
+
+.shortcutCard:hover::after {
+  transform: rotate(-90deg);
+  bottom: 0.9rem;
+  right: 0.7rem;
+}
+
+.btn {
+  font-family: var(--subFont);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--mainColor);
+  padding: 0.4rem 0.7rem;
+  border-radius: 3px;
 }
 
 .key {
