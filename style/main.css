@@ -138,6 +138,7 @@ ol li:last-child::after {
   justify-content: center;
   align-items: center;
   border: solid 1px #fff;
+  transition: 0.3s ease;
 }
 
 .softwareCard a {
@@ -155,6 +156,7 @@ ol li:last-child::after {
   justify-content: center;
   align-items: center;
   border: solid 1px #fff;
+  transition: 0.3s ease;
 }
 
 .shortcutCard a {
@@ -164,14 +166,31 @@ ol li:last-child::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 1rem;
 }
 
 .shortcutCard a h2 {
-  padding: 0 0 1rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: var(--mainColor);
+  margin-bottom: 2rem;
+  transition: 0.3s ease;
 }
 
 .shortcut {
   padding: 0.8rem 0;
+}
+
+.shortcutCard:hover {
+  transform: translate(-0.5rem, -0.5rem);
+  box-shadow: 0.5rem 0.5rem 0 var(--subColor);
+  filter: saturate(1);
+}
+
+.shortcutCard:hover h2 {
+  letter-spacing: 2px;
 }
 
 .key {
@@ -245,6 +264,14 @@ ol li:last-child::after {
 @media screen and (min-width: 768px) {
   .shortcutWrapper {
     grid-template-columns: repeat(2, 1fr);
+  }
+  #shortcutList article {
+    padding: 2rem var(--sidePadding);
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 1rem;
+  }
+  .shortcutCard a {
+    font-size: 1.2rem;
   }
 }
 
