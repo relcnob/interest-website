@@ -5,10 +5,10 @@
   --mainFont: "Zen Kaku Gothic Antique", sans-serif;
   --subFont: "Roboto", sans-serif;
   --mainColor: rgb(233 49 49);
-  --subColor: rgb(144 225 87);
+  --subColor: rgb(51, 50, 53);
   --bgColor: rgb(29, 28, 28);
-  --linkColor: ;
-  --linkhoverColor: ;
+  --linkColor: rgb(184, 255, 133);
+  --linkhoverColor: rgb(215, 255, 187);
   --sidePadding: 1rem;
 }
 
@@ -42,6 +42,7 @@ h3 {
 a {
   text-decoration: none;
   color: #fff;
+  transition: all 0.2s ease;
 }
 
 li {
@@ -184,9 +185,13 @@ ol li:last-child::after {
 
 .shortcutWrapper {
   padding: 1rem var(--sidePadding);
+  gap: 2rem;
 }
 .shortcutWrapper section {
   padding: 1.5rem;
+}
+.shortcutWrapper section {
+  border: solid 1px #fff;
 }
 
 .shortcutWrapper section h2 {
@@ -204,13 +209,37 @@ ol li:last-child::after {
   margin: 1.5rem 0;
 }
 
-.shortcutWrapper section div {
+.shortcutWrapper section:first-of-type div {
   display: flex;
   flex-direction: row;
 }
+
 .shortcutWrapper section div p {
   padding: 0.2rem;
   margin: 0;
+}
+
+.shortcutWrapper section a {
+  color: var(--linkColor);
+}
+.shortcutWrapper section a:hover {
+  color: var(--linkhoverColor);
+  text-decoration: underline;
+}
+
+.worksIn {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.worksIn a:after {
+  content: ",  ";
+  color: #fff;
+  line-height: 1.5;
+}
+.worksIn a:last-of-type::after {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -221,8 +250,8 @@ ol li:last-child::after {
 
 @media screen and (min-width: 1280px) {
   .shortcutWrapper {
-    grid-template-columns: repeat(2, 1fr);
-    width: 70%;
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
     margin: auto;
   }
 }
