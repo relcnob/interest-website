@@ -139,6 +139,8 @@ ol li:last-child::after {
   align-items: center;
   border: solid 1px #fff;
   transition: 0.3s ease;
+  position: relative;
+  padding: 2rem;
 }
 
 .softwareCard a {
@@ -147,6 +149,25 @@ ol li:last-child::after {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.softwareCard:hover {
+  transform: translate(-0.5rem, -0.5rem);
+  box-shadow: 0.5rem 0.5rem 0 var(--subColor);
+}
+
+.softwareCard span {
+  padding: 0.2rem 0.5rem;
+  background-color: var(--mainColor);
+  z-index: 2;
+  position: absolute;
+  bottom: -1px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  font-family: var(--subFont);
+  border-radius: 3px 3px 0 0;
+  border: solid 1px #fff;
 }
 
 .shortcutCard {
@@ -202,7 +223,6 @@ ol li:last-child::after {
 .shortcutCard:hover {
   transform: translate(-0.5rem, -0.5rem);
   box-shadow: 0.5rem 0.5rem 0 var(--subColor);
-  filter: saturate(1);
 }
 
 .shortcutCard:hover h2 {
@@ -211,7 +231,7 @@ ol li:last-child::after {
 
 .shortcutCard:hover::after {
   transform: rotate(-90deg);
-  bottom: 0.9rem;
+  bottom: 1rem;
   right: 0.7rem;
 }
 
@@ -304,6 +324,10 @@ ol li:last-child::after {
   }
   .shortcutCard a {
     font-size: 1.2rem;
+  }
+  #software article {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
   }
 }
 
