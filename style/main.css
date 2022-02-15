@@ -4,8 +4,8 @@
 :root {
   --mainFont: "Zen Kaku Gothic Antique", sans-serif;
   --subFont: "Roboto", sans-serif;
-  --mainColor: ;
-  --subColor: ;
+  --mainColor: rgb(233 49 49);
+  --subColor: rgb(144 225 87);
   --bgColor: rgb(29, 28, 28);
   --linkColor: ;
   --linkhoverColor: ;
@@ -36,6 +36,7 @@ h1,
 h2,
 h3 {
   font-family: var(--subFont);
+  margin-bottom: 1rem;
 }
 
 a {
@@ -179,4 +180,49 @@ ol li:last-child::after {
   border-radius: 0.3rem;
   box-shadow: 2px 2px 3px rgb(87, 86, 83);
   color: #121212;
+}
+
+.shortcutWrapper {
+  padding: 1rem var(--sidePadding);
+}
+.shortcutWrapper section {
+  padding: 1.5rem;
+}
+
+.shortcutWrapper section h2 {
+  margin-bottom: 1rem;
+}
+
+.shortcutWrapper section:first-of-type h2 {
+  margin-bottom: 1rem;
+  width: 100%;
+  background: var(--mainColor);
+  padding: 0.3rem;
+}
+
+.shortcutWrapper section p {
+  margin: 1.5rem 0;
+}
+
+.shortcutWrapper section div {
+  display: flex;
+  flex-direction: row;
+}
+.shortcutWrapper section div p {
+  padding: 0.2rem;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .shortcutWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .shortcutWrapper {
+    grid-template-columns: repeat(2, 1fr);
+    width: 70%;
+    margin: auto;
+  }
 }
