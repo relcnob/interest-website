@@ -53,22 +53,20 @@ function showSoftware(software) {
     .querySelector(" .shortcutCard a")
     .setAttribute("href", `shortcut.html?id=` + id);
 
-  let windowsShortcutIcon = software.windows_shortcut;
+  //   let windowsShortcutIcon = software.windows_shortcut;
 
-  windowsShortcutIcon.forEach(showButtons(copy, windowsShortcutIcon));
-  function showButtons(copy, key) {
-    console.log(key);
+  //   windowsShortcutIcon.forEach(showButtons(copy, windowsShortcutIcon));
+  //   function showButtons(copy, key) {
+  //     console.log(key);
 
-    //creates span
-    let button = document.createElement("span");
-    button.classList.add("key");
-    let text = document.createTextNode(key);
-    button.appendChild(text);
-    copy.querySelector(".shortcutWindows").appendChild(button);
-  }
+  //     //creates span
+  //     let button = document.createElement("span");
+  //     button.classList.add("key");
+  //     let text = document.createTextNode(key);
+  //     button.appendChild(text);
+  //     copy.querySelector(".shortcutWindows").appendChild(button);
+  //   }
   const parent = document.querySelector("main article");
 
   parent.appendChild(copy);
-
-  console.log(windowsShortcutIcon);
 }
