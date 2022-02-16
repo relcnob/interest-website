@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 // const query = urlParams.get("q");
-// const id = urlParams.get("id");
-let id = "620badec8d779a0100035796";
+const id = urlParams.get("id");
+
 const url = "https://shrtct-2d24.restdb.io/rest/shortcut/" + id;
 // api-key :
 
