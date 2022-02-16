@@ -219,6 +219,10 @@ ol li:last-child::after {
 .shortcut {
   padding: 0.8rem 0;
 }
+.shortcut p:last-of-type {
+  display: none;
+  visibility: hidden;
+}
 
 .shortcutCard:hover {
   transform: translate(-0.5rem, -0.5rem);
