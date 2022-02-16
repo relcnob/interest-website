@@ -218,6 +218,11 @@ ol li:last-child::after {
 
 .shortcut {
   padding: 0.8rem 0;
+  display: flex;
+}
+
+.shortcut p {
+  padding: 0.3rem;
 }
 .shortcut p:last-of-type {
   display: none;
