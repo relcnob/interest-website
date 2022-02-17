@@ -60,10 +60,47 @@ header {
   align-items: center;
   padding: 2rem var(--sidePadding);
   justify-content: space-between;
+  font-size: 1.2rem;
+}
+
+header ul li a {
+  transition: 0.5s ease;
+  position: relative;
+}
+header ul li a:hover {
+  color: var(--linkColor);
+}
+header ul li a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  content: "";
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+header ul li a:hover::after {
+  transform: scaleX(1);
+  background-color: var(--linkColor);
+  transform-origin: left;
+}
+
+header a img {
+  height: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+header a img:hover {
+  transform: translateY(0.3rem);
+  opacity: 0.5;
 }
 
 footer {
-  padding: var(--sidePadding);
+  padding: 2rem var(--sidePadding);
   font-size: 0.8rem;
 }
 
@@ -96,6 +133,30 @@ ol li:last-child::after {
 }
 
 /* ID styling */
+
+#homeBanner {
+  width: 100%;
+  height: calc(100vh - 4rem);
+  background-image: url(/img/home-banner.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#homeBanner span {
+  padding: 2rem 2.5rem;
+  width: 90%;
+  background-color: var(--bgColor);
+  border: solid 1px #fff;
+  box-shadow: 0.8rem 0.8rem 0 var(--subColor);
+}
+
+#homeBanner span h1 {
+  color: var(--mainColor);
+  font-size: 2rem;
+}
 
 #homeContent {
   padding: 2rem var(--sidePadding);
@@ -323,6 +384,16 @@ ol li:last-child::after {
 }
 
 @media screen and (min-width: 768px) {
+  :root {
+    --sidePadding: 5rem;
+  }
+
+  #homeBanner span {
+    padding: 2rem 2.5rem;
+    width: 60%;
+    font-size: 1.2rem;
+  }
+
   .shortcutWrapper {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -341,6 +412,10 @@ ol li:last-child::after {
 }
 
 @media screen and (min-width: 1280px) {
+  #homeBanner span {
+    padding: 2rem 2.5rem;
+    width: 40%;
+  }
   .shortcutWrapper {
     grid-template-columns: 1fr 1fr;
     width: 90%;
