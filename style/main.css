@@ -80,7 +80,7 @@ header ul li a::after {
   background-color: #fff;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease-in-out;
 }
 
 header ul li a:hover::after {
@@ -102,6 +102,7 @@ header a img:hover {
 footer {
   padding: 2rem var(--sidePadding);
   font-size: 0.8rem;
+  border-top: solid 1px #fff;
 }
 
 ul {
@@ -160,6 +161,12 @@ ol li:last-child::after {
 
 #homeContent {
   padding: 2rem var(--sidePadding);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+#homeContent h1 {
+  grid-column: 1/-1;
 }
 
 #software article {
@@ -190,6 +197,18 @@ ol li:last-child::after {
 
 .breadcrumbs {
   font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.breadcrumbs li:last-child {
+  font-weight: bold;
+  color: var(--linkColor);
+}
+.breadcrumbs li a {
+  transition: 0.5s ease;
+}
+.breadcrumbs li a:hover {
+  color: var(--linkColor);
 }
 
 .softwareCard {
@@ -217,7 +236,9 @@ ol li:last-child::after {
   box-shadow: 0.5rem 0.5rem 0 var(--subColor);
 }
 
-.softwareCard span {
+.softwareCard a span {
+  display: block;
+  width: calc(100% + 2px);
   padding: 0.2rem 0.5rem;
   background-color: var(--mainColor);
   z-index: 2;
@@ -229,6 +250,14 @@ ol li:last-child::after {
   font-family: var(--subFont);
   border-radius: 3px 3px 0 0;
   border: solid 1px #fff;
+  text-align: center;
+  transition: 0.3s ease-in;
+  transition-delay: 0.1s;
+}
+
+.softwareCard:hover a span {
+  width: calc(100% + 2px);
+  border-radius: 0;
 }
 
 .shortcutCard {
@@ -258,6 +287,13 @@ ol li:last-child::after {
   transition: all 0.3s ease;
 }
 
+.shortcutIcon {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
+  width: 3rem;
+}
+
 .shortcutCard a {
   width: 100%;
   height: 100%;
@@ -278,12 +314,15 @@ ol li:last-child::after {
 }
 
 .shortcut {
-  padding: 0.8rem 0;
+  padding: 0.8rem 0.8rem;
   display: flex;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .shortcut p {
-  padding: 0.3rem;
+  padding: 0.1rem;
 }
 .shortcut p:last-of-type {
   display: none;
@@ -295,10 +334,6 @@ ol li:last-child::after {
   box-shadow: 0.5rem 0.5rem 0 var(--subColor);
 }
 
-.shortcutCard:hover h2 {
-  letter-spacing: 2px;
-}
-
 .shortcutCard:hover::after {
   transform: rotate(-90deg);
   bottom: 1rem;
@@ -308,11 +343,66 @@ ol li:last-child::after {
 .btn {
   font-family: var(--subFont);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--mainColor);
-  padding: 0.4rem 0.7rem;
+  background-color: var(--bgColor);
+  padding: 0.4rem 1rem;
   border-radius: 3px;
+  border: solid 1px #fff;
+  width: fit-content;
+  margin: auto;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 3;
+  transition: 0.3s ease;
+}
+
+#homeBanner section {
+  width: fit-content;
+  margin: auto;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+#homeBanner section:after {
+  position: absolute;
+  content: "";
+  display: block;
+  background: var(--subColor);
+  width: calc(100% + 0px);
+  height: 0.55rem;
+  left: 0;
+  bottom: -0.45rem;
+  z-index: 2;
+  border-radius: 0px 0px 0.2rem 0.2rem;
+  transition: 0.3s ease;
+}
+
+#homeBanner section:hover::after {
+  transform: translateY(-0.25rem);
+}
+
+#homeBanner section:hover {
+  transform: translateY(0.3rem);
+}
+
+#homeBanner section:hover .btn {
+  color: var(--linkColor);
+  border: solid 1px var(--linkColor);
+}
+
+#homeBanner span p {
+  margin: 1rem 0;
+}
+
+#homeBanner span p:nth-child(4) {
+  text-align: center;
+  color: var(--linkColor);
+  font-weight: bold;
+  font-size: 1.3rem;
+  transform: skew(-10deg);
 }
 
 .key {
@@ -391,7 +481,7 @@ ol li:last-child::after {
   #homeBanner span {
     padding: 2rem 2.5rem;
     width: 60%;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .shortcutWrapper {
@@ -399,26 +489,33 @@ ol li:last-child::after {
   }
   #shortcutList article {
     padding: 2rem var(--sidePadding);
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1rem;
   }
   .shortcutCard a {
     font-size: 1.2rem;
   }
-  #software article {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+  .shortcut {
+    font-size: 1.1rem;
   }
 }
 
 @media screen and (min-width: 1280px) {
   #homeBanner span {
     padding: 2rem 2.5rem;
-    width: 40%;
+    width: 50%;
   }
   .shortcutWrapper {
     grid-template-columns: 1fr 1fr;
     width: 90%;
     margin: auto;
+  }
+  #software article {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  .softwareCard a span {
+    width: 50%;
   }
 }

@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SHORTCUT WEBSITE</title>
+    <title>SHRTCT - HOME</title>
     <link rel="stylesheet" href="/style/main.css" />
+    <link rel="icon" type="image/x-icon" href="/img/icons/favicon.svg" />
   </head>
   <body id="index">
     <header>
@@ -22,16 +23,37 @@
           <span>
             <h1>OUR AMAZING SHORTCUT WEBSITE</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-              enim excepturi at, amet corporis tenetur! Dicta, officiis? Alias,
-              nemo dolor! Lorem ipsum dolor sit amet consectetur, adipisicing
-              elit. Expedita enim aliquid ipsum culpa porro assumenda nihil
-              harum doloribus aperiam veritatis?
-            </p></span
-          >
+              Ever wondered how all the great designers and coders work so fast?
+              Projects just flying left and right, but how do they do it?
+            </p>
+            <p>
+              SHRTCT! The place you'll find usefull shortcuts to ease up your
+              creation process!
+            </p>
+            <p>Get more time for yourself, by using SHRTCT!</p>
+            <section>
+              <a class="btn" href="category.html">FIND SHORTCUTS</a>
+            </section>
+          </span>
         </section>
-        <section id="homeContent"></section>
+        <section id="homeContent" class="grid">
+          <h1>NEWEST SHORTCUTS</h1>
+        </section>
       </article>
+      <template id="shortcutTemplate">
+        <section class="shortcutCard">
+          <img
+            class="shortcutIcon"
+            src="/img/icons/AdobePhotoshop.png"
+            alt="icon"
+          />
+          <a href="shortcut.html">
+            <h2>UNDO</h2>
+            <div class="shortcut shortcutWindows"></div>
+            <div class="shortcut shortcutMac"></div>
+          </a>
+        </section>
+      </template>
     </main>
     <footer>&copy; 2022 Butterfingers</footer>
   </body>
