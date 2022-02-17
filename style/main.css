@@ -138,7 +138,7 @@ ol li:last-child::after {
 #homeBanner {
   width: 100%;
   height: calc(100vh - 4rem);
-  background-image: url(/img/home-banner.jpg);
+  background-image: url(../img/home-banner.jpg);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -280,7 +280,7 @@ ol li:last-child::after {
   height: 16px;
   bottom: 0.7rem;
   right: 0.4rem;
-  background-image: url(/img/icons/right-arrow.svg);
+  background-image: url(../img/icons/right-arrow.svg);
   background-repeat: no-repeat;
   background-size: contain;
   transform-origin: center;
