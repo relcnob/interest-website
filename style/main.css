@@ -80,7 +80,7 @@ header ul li a::after {
   background-color: #fff;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease-in-out;
 }
 
 header ul li a:hover::after {
@@ -251,7 +251,8 @@ ol li:last-child::after {
   border-radius: 3px 3px 0 0;
   border: solid 1px #fff;
   text-align: center;
-  transition: 0.5s ease-in;
+  transition: 0.3s ease-in;
+  transition-delay: 0.1s;
 }
 
 .softwareCard:hover a span {
@@ -392,6 +393,18 @@ ol li:last-child::after {
   border: solid 1px var(--linkColor);
 }
 
+#homeBanner span p {
+  margin: 1rem 0;
+}
+
+#homeBanner span p:nth-child(4) {
+  text-align: center;
+  color: var(--linkColor);
+  font-weight: bold;
+  font-size: 1.3rem;
+  transform: skew(-10deg);
+}
+
 .key {
   background: rgb(228, 225, 221);
   padding: 0.2rem 0.5rem;
@@ -468,7 +481,7 @@ ol li:last-child::after {
   #homeBanner span {
     padding: 2rem 2.5rem;
     width: 60%;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .shortcutWrapper {
@@ -490,7 +503,7 @@ ol li:last-child::after {
 @media screen and (min-width: 1280px) {
   #homeBanner span {
     padding: 2rem 2.5rem;
-    width: 40%;
+    width: 50%;
   }
   .shortcutWrapper {
     grid-template-columns: 1fr 1fr;
