@@ -34,10 +34,7 @@ function handleData(shortcut) {
 
   document
     .querySelector(".breadcrumbs li:nth-child(3) a")
-    .setAttribute(
-      "href",
-      `subcategory.html?q="software":` + shortcut.software + `"}`
-    );
+    .setAttribute("href", "subcategory.html?program=" + shortcut.software);
 
   document.querySelector(".breadcrumbs li:nth-child(4)").textContent =
     shortcut.shortcut_name;
