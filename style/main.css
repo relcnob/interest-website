@@ -482,6 +482,9 @@ ol li:last-child::after {
   .shortcutCard a {
     font-size: 1.2rem;
   }
+  .shortcut {
+    font-size: 1.1rem;
+  }
 }
 
 @media screen and (min-width: 1280px) {
