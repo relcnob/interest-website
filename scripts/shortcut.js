@@ -29,10 +29,24 @@ function handleData(shortcut) {
   //   console.log(shortcut);
   //   console.log(shortcut._id);
 
+  document.querySelector(".breadcrumbs li:nth-child(3) a").textContent =
+    shortcut.software;
+
+  document
+    .querySelector(".breadcrumbs li:nth-child(3) a")
+    .setAttribute(
+      "href",
+      `subcategory.html?q="software":` + shortcut.software + `"}`
+    );
+
+  document.querySelector(".breadcrumbs li:nth-child(4)").textContent =
+    shortcut.shortcut_name;
+
   document.querySelector(".shortcutWrapper section h2").textContent =
     shortcut.shortcut_name;
   document.querySelector(".description").textContent = shortcut.description;
-  document.querySelector(".version").textContent = shortcut.version;
+  document.querySelector(".version").textContent =
+    "Version: " + shortcut.version;
 
   //display other softwares where it also works
   //   let alsoWorksIn = shortcut.also_works_in;

@@ -33,6 +33,8 @@ function handleSoftwareList(data) {
   //   console.log(shortcut._id);
   data.forEach(showSoftware);
   document.querySelector(".grid h1").textContent = subcategory;
+  document.querySelector(".breadcrumbs li:last-of-type").textContent =
+    subcategory;
 }
 
 function showSoftware(software) {
@@ -52,23 +54,18 @@ function showSoftware(software) {
   copy
     .querySelector(" .shortcutCard a")
     .setAttribute("href", `shortcut.html?id=` + id);
+  software.windows_shortcut.forEach((key) => {
+    copy.querySelector(
+      ".shortcutWindows"
+    ).innerHTML += `<span class="key">${key}</span> <p>+</p>`;
+  });
+  software.mac_shortcut.forEach((key) => {
+    copy.querySelector(
+      ".shortcutMac"
+    ).innerHTML += `<span class="key">${key}</span> <p>+</p>`;
+  });
 
-  let windowsShortcutIcon = software.windows_shortcut;
-
-  windowsShortcutIcon.forEach(showButtons(copy, windowsShortcutIcon));
-  function showButtons(copy, key) {
-    console.log(key);
-
-    //creates span
-    let button = document.createElement("span");
-    button.classList.add("key");
-    let text = document.createTextNode(key);
-    button.appendChild(text);
-    copy.querySelector(".shortcutWindows").appendChild(button);
-  }
   const parent = document.querySelector("main article");
 
   parent.appendChild(copy);
-
-  console.log(windowsShortcutIcon);
 }
