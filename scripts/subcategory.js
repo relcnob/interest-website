@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 // const query = urlParams.get("q");
-// const id = urlParams.get("id");
-let subcategory = "Visual Studio Code";
+const subcategory = urlParams.get("program");
+// let subcategory = "Visual Studio Code";
 const url =
   `https://shrtct-2d24.restdb.io/rest/shortcut?q={"software" : "` +
   subcategory +

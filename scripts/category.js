@@ -1,4 +1,4 @@
-const url = `https://shrtct-2d24.restdb.io/rest/shortcut?q{"$distinct" : "software"}`;
+const url = `https://shrtct-2d24.restdb.io/rest/shortcut?q={"$distinct" : "software"}`;
 // api-key :
 
 const options = {
@@ -30,22 +30,15 @@ function handleSoftwareList(data) {
 function showSoftware(software) {
   //grab template
 
-  const template = document.querySelector("#shortcutTemplate").content;
+  console.log(software);
 
   //clone it
-
-  const copy = template.cloneNode(true);
-
-  //change content
-  let id = software._id;
-  copy.querySelector(".shortcutCard h2").textContent = software.shortcut_name;
-  copy
-    .querySelector(" .shortcutCard a")
-    .setAttribute("href", `shortcut.html?id=` + id);
-
-  //setAttribute("href", "subcategory.html?program=" + program)
-
-  const parent = document.querySelector("main article");
-
-  parent.appendChild(copy);
+  const catTemplate = document.querySelector("#categoryTemplate").content;
+  const clone = catTemplate.cloneNode(true);
+  clone
+    .querySelector(".softwareCard a")
+    .setAttribute("href", `subcategory.html?program=` + software);
+  clone.querySelector(".softwareCard span").textContent = software;
+  const parent = document.querySelector(".grid");
+  parent.appendChild(clone);
 }
