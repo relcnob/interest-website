@@ -38,6 +38,12 @@ function showSoftware(software) {
   clone
     .querySelector(".softwareCard a")
     .setAttribute("href", `subcategory.html?program=` + software);
+  let softwareIcon = software;
+
+  let result = softwareIcon.replace(/ /g, "");
+  clone
+    .querySelector(".softwareCard a img")
+    .setAttribute("src", `img/icons/` + result + `.png`);
   clone.querySelector(".softwareCard span").textContent = software;
   const parent = document.querySelector(".grid");
   parent.appendChild(clone);
