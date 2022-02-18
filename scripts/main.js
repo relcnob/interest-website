@@ -3,7 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 // const query = urlParams.get("q");
 const subcategory = urlParams.get("program");
 // let subcategory = "Visual Studio Code";
-const url = "https://shrtct-2d24.restdb.io/rest/shortcut?sort=ID&r=1&max=4";
+const url = `https://shrtct-2d24.restdb.io/rest/shortcut?h={"$orderby": {"ID": -1}}&max=4`;
 // api-key :
 
 const options = {

@@ -57,6 +57,7 @@ function handleData(shortcut) {
   let macShortcutIcon = shortcut.mac_shortcut;
 
   windowsShortcutIcon.forEach(displaysShortcutWindows);
+
   macShortcutIcon.forEach(displaysShortcutMac);
 
   //display other softwares where it also works
